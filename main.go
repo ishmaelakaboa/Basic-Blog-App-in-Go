@@ -11,5 +11,5 @@ type Post struct {
 var (
 	posts   = []Post{}
 	nextID  = 1
-	postMux sync.Mutex
+	postMux sync.Mutex // Mutex for safe concurrent access
 )
