@@ -1,6 +1,10 @@
 package main
 
-import "sync"
+import (
+	"html/template"
+	"net/http"
+	"sync"
+)
 
 type Post struct {
 	ID      int
@@ -13,3 +17,7 @@ var (
 	nextID  = 1
 	postMux sync.Mutex // Mutex for safe concurrent access
 )
+
+func homeHandler(w http.ResponseWriter, r *http.Request){
+	tmpl, err := template.ParseFiles("templates/index.html")
+}
